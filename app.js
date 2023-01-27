@@ -13,10 +13,6 @@ const io = new Server(httpServer, {
   }
 });
 
-app.get("/", function (req, res) {
-  res.sendFile("D:/devcheck/demo/socket.io/index.html");
-});
-
 io.on("connection", function (socket) {
   console.log("A user connected");
 

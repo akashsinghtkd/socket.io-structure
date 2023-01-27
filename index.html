@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hello world</title>
+</head>
+<script src="http://localhost:3000/socket.io/socket.io.js"></script>
+<script>
+    // var socket = io('http://localhost:3000');
+    var socket = io("ws://localhost:3000");
+    setTimeout(function () {
+        // socket.emit('testerEvent', { description: 'A custom event named testerEvent!' });
+        socket.emit('clientEvent', 'Sent an event from the client!');
+        console.log('sdg');
+    }, 4000);
+    socket.on('testerEvent', function (data) { document.write(data.description) });
+</script>
+
+<body>Hello world</body>
+
+</html>
